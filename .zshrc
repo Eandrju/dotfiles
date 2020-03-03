@@ -27,4 +27,4 @@ source ~/anaconda3/etc/profile.d/conda.sh
 
 # ros initialize
 source /opt/ros/melodic/setup.zsh
-source ~/catkin_ws/devel/setup.zsh
+source ~/ros_projects/ros_omack_ws/devel/setup.zsh

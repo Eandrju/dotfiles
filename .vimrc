@@ -62,6 +62,8 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 " source .vimrc
 nnoremap <leader>@ :source ~/.vimrc<CR>
+" clear spaces at the end of lines
+nnoremap <leader>w :%s/\ \+$//<CR>''
 
 "--- vim splitowindowtabs
 " vim splits

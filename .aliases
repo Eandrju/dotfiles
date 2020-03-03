@@ -6,6 +6,7 @@ alias v='vim'
 # useful system tools
 alias toggleTouchpad="bash ~/.config/my-scripts/toggle_touchpad.sh"
 alias xclip="xclip -selection c"
+alias cpwd="pwd | xclip"
 
 # vpn related
 alias vpn='sudo openvpn --config /etc/openvpn/client/lui.ovpn'
