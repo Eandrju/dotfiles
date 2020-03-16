@@ -23,8 +23,10 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 
 # conda initialize
-source ~/anaconda3/etc/profile.d/conda.sh
+source ~/anaconda3/etc/profile.d/conda.sh  # commented out by conda initialize
 
 # ros initialize
-source /opt/ros/melodic/setup.zsh
-source ~/ros_projects/ros_omack_ws/devel/setup.zsh
+#source /opt/ros/melodic/setup.zsh
+#source ~/ros_projects/ros_omack_ws/devel/setup.zsh
+
+setxkbmap -option "caps:swapescape"
