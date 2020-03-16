@@ -2,3 +2,8 @@
 
 # deactivating conda auto sourcing at the start
 conda config --set auto_activate_base false
+
+# switch between zsh and bash
+exec bash
+exec zsh
+
