@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+
+# deactivating conda auto sourcing at the start
+conda config --set auto_activate_base false
