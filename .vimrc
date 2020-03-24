@@ -11,6 +11,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-sensible'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 call vundle#end()           
 filetype plugin indent on 
 
