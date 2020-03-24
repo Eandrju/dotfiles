@@ -27,3 +27,6 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
 # velocidrone simulator
 alias velocidrone="bash /home/alfierra/projects/activeWindow/setup.sh"
+
+# activate local virtual environment
+alias venv="source venv/bin/activate"
