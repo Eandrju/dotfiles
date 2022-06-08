@@ -28,7 +28,7 @@ alias fastai_gcloud='google-chrome http://localhost:8080/tree
 alias killgazebo="killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient"
 
 # manage dotfiles properly
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
 
 # velocidrone simulator
 alias velocidrone="bash /home/alfierra/projects/activeWindow/setup.sh"
