@@ -1,0 +1,112 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+env: 
+  TERM: xterm-256color
+
+window:
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 6
+    y: 6
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  opacity: 1.0
+  
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 5000
+
+font:
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 1
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+#######################################
+##      START OF COLOR SCHEMES       ##
+#######################################
+schemes:
+  ### Gruvbox dark ###
+  GruvboxDark: &GruvboxDark
+    # Default colors
+    primary:
+      # hard contrast: background = '0x1d2021'
+      background: '#282828'
+      # soft contrast: background = '0x32302f'
+      foreground: '#ebdbb2'
+
+    # Normal colors
+    normal:
+      black:   '#282828'
+      red:     '#cc241d'
+      green:   '#98971a'
+      yellow:  '#d79921'
+      blue:    '#458588'
+      magenta: '#b16286'
+      cyan:    '#689d6a'
+      white:   '#a89984'
+
+    # Bright colors
+    bright:
+      black:   '#928374'
+      red:     '#fb4934'
+      green:   '#b8bb26'
+      yellow:  '#fabd2f'
+      blue:    '#83a598'
+      magenta: '#d3869b'
+      cyan:    '#8ec07c'
+      white:   '#ebdbb2'
+
+######################################################################
+## SET THEME: Choose ONE color scheme from those in the above list. ##
+## ###################################################################
+colors: *GruvboxDark
+
+#######################################
+##       END OF COLOR SCHEMES        ##
+#######################################
+
+
+# Bindings are always filled by default, but will be replaced when a new
+# binding with the same triggers is defined. To unset a default binding, it can
+# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
+# a no-op if you do not wish to receive input characters for that binding.
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,         mods: Control|Shift, action: Paste                       }
+  - { key: C,         mods: Control|Shift, action: Copy                        }
+  - { key: Insert,    mods: Shift,         action: PasteSelection              }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: Paste,     mods: None,          action: Paste                       }
+  - { key: Copy,      mods: None,          action: Copy                        }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
+  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
+  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
+  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+
+
