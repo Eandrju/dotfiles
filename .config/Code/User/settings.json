@@ -1,0 +1,30 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "vim.handleKeys": {
+        "<C-f>": false
+    },
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "onFocusChange",
+    "clang-format.executable": "/usr/bin/clang-format",
+    "clang-format.style": "google",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "clang-format.language.c.enable": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
