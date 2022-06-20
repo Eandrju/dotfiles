@@ -1,0 +1,12 @@
+[alias]
+    st = status --short 
+    c = commit
+    br = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --color=always | tail
+    co = checkout
+    cob = checkout -b
+    p = pull 
+    diffstat = diff --stat -r
+    heir = log --all --graph --decorate --oneline --simplify-by-decoration
+    ss = show --stat
+    plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+    poh = push origin HEAD
