@@ -26,6 +26,5 @@ else
 fi;
 
 config config status.showUntrackedFiles no
-config branch --set-upstream-to=origin/master master
 git config --global include.path "~/.gitconfig.aliases"
 
