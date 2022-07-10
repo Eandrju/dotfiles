@@ -1,9 +1,16 @@
+#!/bin/bash 
+
+set -e
+
 git clone --bare https://github.com/Eandrju/dotfiles $HOME/.dotfiles
+
 function config {
    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
-config checkout
-if [ $? != 0 ]; then
+
+std_err_output=$(config checkout 2>&1 >/dev/null) || true
+
+if [[ $std_err_output == *"following untracked working tree files would be overwritten"* ]]; then
     echo "Backing up pre-existing dot files.";
     config checkout 2>&1 |
         egrep "\s+\." |
