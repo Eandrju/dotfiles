@@ -1,0 +1,59 @@
+- hosts: all
+
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+
+  tasks:
+    - name: Install Neovim Dependencies Ubuntu
+      when: ansible_distribution == 'Ubuntu'
+      become: true
+      ansible.builtin.apt:
+          update_cache: yes
+          cache_valid_time: 86400
+          pkg: 
+            - ninja-build 
+            - gettext
+            - libtool
+            - libtool-bin
+            - autoconf
+            - automake
+            - cmake
+            - g++
+            - pkg-config
+            - unzip
+            - curl
+            - doxygen
+
+    - name: Install Neovim Dependencies MacOSX
+      when: ansible_distribution == 'MacOSX'
+      community.general.homebrew:
+          update_homebrew: yes
+          pkg:
+            - ninja 
+            - libtool 
+            - automake 
+            - cmake 
+            - pkg-config 
+            - gettext 
+            - curl
+
+    - name: Clone Neovim
+      ansible.builtin.git:
+          repo: https://github.com/neovim/neovim.git
+          dest: "{{ home }}/vendor/neovim"
+          update: yes
+          single_branch: yes
+          version: release-0.7
+          depth: 1
+
+    - name: Build Neovim
+      shell: "cd {{ home }}/vendor/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo"
+    
+    - name: Install Neovim
+      become: true
+      shell: "cd {{ home }}/vendor/neovim && make install"
+
+    - name: Make Clean
+      shell: "cd {{ home }}/vendor/neovim && make distclean && make clean"
+
+

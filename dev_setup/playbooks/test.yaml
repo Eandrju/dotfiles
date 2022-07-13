@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: run on debian
+      debug: msg="hello debian"
+      when: ansible_distribution == 'Ubuntu'
+      
+    - name: run on mac 
+      debug: msg="hello mac"
+      when: ansible_distribution == 'MacOSX'
