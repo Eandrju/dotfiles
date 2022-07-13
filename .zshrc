@@ -43,12 +43,13 @@ autoload -Uz _zinit
 
 
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
-zinit light zdharma-continuum/fast-syntax-highlighting
 # AUTOSUGGENSTION
 zinit light zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 # COMPLETIONS
 zinit light zsh-users/zsh-completions
+# SYNTAX HIGHLIGHTING
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 # EXA
 zinit ice wait="2" lucid from="gh-r" as="null" mv="bin/exa* -> exa" sbin

@@ -1,7 +1,6 @@
 #shorcuts
 alias l='ls'
 alias la='ls -A'
-alias v='vim'
 
 # exa is a new ls
 alias l='exa'
@@ -12,17 +11,15 @@ alias ls='exa --color=auto'
 alias du='du -BM --max-depth=1 | sort -nr'
 
 # useful system tools
+alias vim="nvim"
+alias v="nvim"
 alias toggleTouchpad="bash ~/.config/my-scripts/toggle_touchpad.sh"
 alias xclip="xclip -selection c"
 alias cpwd="pwd | xclip"
 
 # vpn related
-alias vpn='sudo openvpn --config /etc/openvpn/client/lui.ovpn'
-alias wakeUpPC='python ~/projects/wakeUpAlarmClient/wakeUp.py'
-
-# set up fastai google cloud
-alias fastai_gcloud='google-chrome http://localhost:8080/tree
-                     gcloud compute ssh jupyter@my-fastai-instance -- -L 8080:localhost:8080'
+#alias vpn='sudo openvpn --config /etc/openvpn/client/lui.ovpn'
+#alias wakeUpPC='python ~/projects/wakeUpAlarmClient/wakeUp.py'
 
 # ros and gazebo
 alias killgazebo="killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient"
@@ -35,5 +32,3 @@ alias velocidrone="bash /home/alfierra/projects/activeWindow/setup.sh"
 
 # activate local virtual environment
 alias venv="source venv/bin/activate"
-
-
