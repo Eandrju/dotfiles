@@ -12,7 +12,7 @@ alias du='du -BM --max-depth=1 | sort -nr'
 
 # useful system tools
 alias vim="nvim"
-alias v="nvim"
+alias v="vim"
 alias toggleTouchpad="bash ~/.config/my-scripts/toggle_touchpad.sh"
 alias xclip="xclip -selection c"
 alias cpwd="pwd | xclip"
