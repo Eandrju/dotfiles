@@ -56,4 +56,15 @@
     - name: Make Clean
       shell: "cd {{ home }}/vendor/neovim && make distclean && make clean"
 
+    - name: Install Packer - Neovim plugin manager
+      ansible.builtin.git:
+          repo: https://github.com/wbthomason/packer.nvim
+          dest: "{{ home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+          update: yes
+          single_branch: yes
+          version: master 
+          depth: 1
+
+
+
 
