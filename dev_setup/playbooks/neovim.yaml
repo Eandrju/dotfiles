@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
 
   vars:
     home: "{{ lookup('env', 'HOME') }}"
@@ -47,10 +47,11 @@
           depth: 1
 
     - name: Build Neovim
+      become: yes
       shell: "cd {{ home }}/vendor/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo"
     
     - name: Install Neovim
-      become: true
+      become: yes 
       shell: "cd {{ home }}/vendor/neovim && make install"
 
     - name: Make Clean
@@ -64,6 +65,8 @@
           single_branch: yes
           version: master 
           depth: 1
+     - name: Install Packer plugins
+       shell: nvim --headless +PackerInstall +qa
 
 
 

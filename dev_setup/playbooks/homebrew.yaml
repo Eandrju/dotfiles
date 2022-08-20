@@ -1,0 +1,30 @@
+- hosts: localhost
+
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+
+  tasks:
+    - name: Install Homebrew 
+      block:
+        - name: Check if Homebrew installed 
+          homebrew:
+            update_homebrew: true
+          check_mode: true
+
+      rescue:
+        - name: Install Homebrew 
+          shell: NONINTERACTIVE=1 /bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'
+    
+    - name: Check if Homebrew in PATH 
+      shell: brew --version 
+      register: homebrew_in_path
+      ignore_errors: yes
+
+    - name: Add Homebrew to PATH
+      when: homebrew_in_path.rc != "0"
+      shell: 
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> {{ home }}/.zprofile
+    - name: Source ~/.zprofile to add brew to current session!
+      debug:
+        message: '' 
+

@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tasks:
+    - name: Install Ubuntu Apt Packages
+      when: ansible_distribution == 'Ubuntu'
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 86400
+        pkg:
+         - exa
+         - htop
+         - bat
+         - tmux
+         - xclip
+
+    - name: Install MacOs Brew Packages
+      when: ansible_distribution == 'MacOSX'
+      community.general.homebrew:
+        update_homebrew: yes
+        upgrade_all: yes
+        pkg:
+         - exa
+         - htop
+         - bat
+         - xclip
+         - tmux
+         - cask
+
+           #    - name: Install MacOs Cask Packages
+           #      when: ansible_distribution == 'MacOSX'
+           #      homebrew_cask:
+           #        update_homebrew: yes
+           #        name:
