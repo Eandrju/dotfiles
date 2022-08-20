@@ -1,18 +1,18 @@
-#shorcuts
-alias l='ls'
-alias la='ls -A'
+#!/usr/bin/env bash 
 
-# exa is a new ls
-alias l='exa'
-alias la='exa -a'
-alias ll='exa -lah'
-alias ls='exa --color=auto'
+function fallback_alias {
+  eval $1 2>/dev/null || eval $2
+}
+
+alias ls='fallback_alias "exa --color=auto" "\ls"'
+alias ll='fallback_alias "exa -lah" "\ls -l"'
+alias la='fallback_alias "exa -a" "\ls -a"'
+alias vim='fallback_alias "nvim" "vim"'
+alias v=vim
 
 alias du='du -BM --max-depth=1 | sort -nr'
 
 # useful system tools
-alias vim="nvim"
-alias v="vim"
 alias toggleTouchpad="bash ~/.config/my-scripts/toggle_touchpad.sh"
 alias xclip="xclip -selection c"
 alias cpwd="pwd | xclip"
