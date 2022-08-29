@@ -15,6 +15,7 @@
          - bat
          - tmux
          - xclip
+         - tree
 
     - name: Install MacOs Brew Packages
       when: ansible_distribution == 'MacOSX'
@@ -30,6 +31,7 @@
          - cask
          - go
          - golangci-lint
+         - tree
 
     - name: Install MacOs Cask Packages
       when: ansible_distribution == 'MacOSX'
