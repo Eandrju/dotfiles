@@ -47,13 +47,10 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 zinit light zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 # COMPLETIONS
-zinit light zsh-users/zsh-completions
+ zinit light zsh-users/zsh-completions
 # SYNTAX HIGHLIGHTING
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-# EXA
-zinit ice wait="2" lucid from="gh-r" as="null" mv="bin/exa* -> exa" sbin
-zinit light ogham/exa
 # PROMPT THEME
 source ~/.prompt-theme.sh
 # HISTORY
@@ -81,9 +78,9 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-export NVM_COMPLETION=true
-export NVM_SYMLINK_CURRENT="true"
-zinit wait='1' lucid light-mode for lukechilds/zsh-nvm
+#export NVM_COMPLETION=true
+#export NVM_SYMLINK_CURRENT="true"
+#zinit wait='1' lucid light-mode for lukechilds/zsh-nvm
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

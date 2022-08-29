@@ -6,3 +6,6 @@ vim.opt.background = "dark"
 vim.g.gruvbox_contrast_dard = 'dark'
 vim.cmd("colorscheme gruvbox")
 
+-- transparent background
+vim.api.nvim_set_hl(0, "Normal", { ctermbg=NONE,  guibg=NONE})
+

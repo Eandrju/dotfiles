@@ -16,6 +16,8 @@ vim.opt.backup=false
 vim.opt.undodir="~/.vim/undodir"
 --vim.opt.undofille=true
 
+vim.opt.termguicolors = true
+
 vim.opt.incsearch=true
 vim.opt.ignorecase=true
 vim.opt.smartcase=true

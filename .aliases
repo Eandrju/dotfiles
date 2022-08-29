@@ -1,18 +1,21 @@
 #!/usr/bin/env bash 
 
 function fallback_alias {
-  eval $1 2>/dev/null || eval $2
+  eval $1 $3 2>/dev/null || eval $2 $3
 }
 
 alias ls='fallback_alias "exa --color=auto" "\ls"'
 alias ll='fallback_alias "exa -lah" "\ls -l"'
 alias la='fallback_alias "exa -a" "\ls -a"'
+
+# editor 
 alias vim='fallback_alias "nvim" "vim"'
 alias v=vim
 
 alias du='du -BM --max-depth=1 | sort -nr'
 
 # useful system tools
+alias cat='bat'
 alias toggleTouchpad="bash ~/.config/my-scripts/toggle_touchpad.sh"
 alias xclip="xclip -selection c"
 alias cpwd="pwd | xclip"

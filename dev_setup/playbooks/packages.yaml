@@ -28,9 +28,14 @@
          - xclip
          - tmux
          - cask
+         - go
+         - golangci-lint
 
-           #    - name: Install MacOs Cask Packages
-           #      when: ansible_distribution == 'MacOSX'
-           #      homebrew_cask:
-           #        update_homebrew: yes
-           #        name:
+    - name: Install MacOs Cask Packages
+      when: ansible_distribution == 'MacOSX'
+      homebrew_cask:
+        update_homebrew: yes
+        name:
+          - rectangle
+          - karabiner-elements
+
