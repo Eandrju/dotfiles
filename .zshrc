@@ -1,26 +1,3 @@
-## oh-my-zsh
-#DISABLE_AUTO_UPDATE='true'
-#COMPLETION_WAITING_DOTS='true'
-#ZSH=~/.oh-my-zsh
-#export ZSH_THEME=theunraveler
-#plugins=(
-#    nmap
-#    sudo
-#    themes
-#    fast-syntax-highlighting
-# )
-#source $ZSH/oh-my-zsh.sh
-#
-## setup history
-
-# ros initialize
-#source /opt/ros/melodic/setup.zsh
-#source ~/ros_projects/ros_omack_ws/devel/setup.zsh
-
-# mbzirc init
-#source ~/.mbzirc.sources.sh
-
-
 OS="$(uname -s)"
 
 # source exports, aliases
@@ -43,13 +20,33 @@ autoload -Uz _zinit
 
 
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
-# AUTOSUGGENSTION
+
+# AUTOSUGGENSTIONS
+zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
+
 # COMPLETIONS
- zinit light zsh-users/zsh-completions
+zinit ice wait="0c" lucid
+zinit light zsh-users/zsh-completions
+
 # SYNTAX HIGHLIGHTING
+zinit ice wait="!0c" lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+# HISTORY SEARCH
+zinit ice wait="0b" lucid
+zinit light zsh-users/zsh-history-substring-search
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=''
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# if [ "$OS" = "Darwin" ]; then
+# elif [ "$OS" = "Linux" ]; then
+# fi
 
 # PROMPT THEME
 source ~/.prompt-theme.sh
@@ -61,18 +58,6 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
-
-if [ "$OS" = "Darwin" ]; then
-    bindkey '^[[A' history-search-backward
-    bindkey '^[[B' history-search-forward
-elif [ "$OS" = "Linux" ]; then
-    # https://superuser.com/a/1296543
-    # key dict is defined in /etc/zsh/zshrc
-    bindkey "$key[Up]" history-search-backward
-    bindkey "$key[Down]" history-search-forward
-fi
-#bindkey '\e[A' history-substring-search-up
-#bindkey '\e[B' history-substring-search-down
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
