@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-export PATH=$PATH:HOME/bin/usr:/usr/local/bin
-export PATH=/usr/local/cuda-10.2/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
-export PATH=$PATH:/home/alfierra/.local/bin
+export PATH=$PATH:$HOME/go/bin
 export EDITOR=nvim
 
