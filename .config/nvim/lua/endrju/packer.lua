@@ -4,8 +4,13 @@ return require('packer').startup(function()
 
     -- General
     use 'terrortylor/nvim-comment'
-
     use 'rstacruz/vim-closer'
+
+    -- Treesiter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
 
     -- colorschemes
     use 'folke/tokyonight.nvim'
