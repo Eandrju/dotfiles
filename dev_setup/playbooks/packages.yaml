@@ -26,12 +26,12 @@
          - exa
          - htop
          - bat
-         - xclip
          - tmux
          - cask
          - go
          - golangci-lint
          - tree
+         - jq
 
     - name: Install MacOs Cask Packages
       when: ansible_distribution == 'MacOSX'
