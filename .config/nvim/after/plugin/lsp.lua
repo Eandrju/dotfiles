@@ -1,6 +1,7 @@
 -- Setup nvim-cmp.
 local cmp = require'cmp'
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 
 vim.opt.completeopt={"menu", "menuone", "noselect"}
 
@@ -39,6 +40,8 @@ require'lspconfig'.gopls.setup{
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
         vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {buffer=0})
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer=0})
+        -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer=0})
+        vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer=0})
         vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer=0})
         vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer=0})
         vim.keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics<cr>', {buffer=0})
@@ -49,6 +52,61 @@ require'lspconfig'.gopls.setup{
 
 -- Python
 require'lspconfig'.pyright.setup{
+    capabilities = capabilities,
+    on_attach = function ()
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
+        vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {buffer=0})
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {buffer=0})
+        vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, {buffer=0})
+        vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, {buffer=0})
+        vim.keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics<cr>', {buffer=0})
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {buffer=0})
+        vim.keymap.set('n', '<leader> ', vim.lsp.buf.code_action, {buffer=0})
+    end,
+}
+
+-- Rust
+-- '.rust_analyzer.setup({
+--     on_attach=on_attach,
+--     settings = {
+--         ["rust-analyzer"] = {
+--             imports = {
+--                 granularity = {
+--                     group = "module",
+--                 },
+--                 prefix = "self",
+--             },
+--             cargo = {
+--                 buildScripts = {
+--                     enable = true,
+--                 },
+--             },
+--             procMacro = {
+--                 enable = true
+--             },
+--         }
+--     }
+-- })
+require'lspconfig'.rust_analyzer.setup{
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    },
     capabilities = capabilities,
     on_attach = function ()
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})

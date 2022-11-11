@@ -43,7 +43,7 @@
           dest: "{{ home }}/vendor/neovim"
           update: yes
           single_branch: yes
-          version: release-0.7
+          version: release-0.8
           depth: 1
 
     - name: Build Neovim
@@ -55,6 +55,7 @@
       shell: "cd {{ home }}/vendor/neovim && make install"
 
     - name: Make Clean
+      become: yes 
       shell: "cd {{ home }}/vendor/neovim && make distclean && make clean"
 
     - name: Install Packer - Neovim plugin manager
@@ -65,8 +66,8 @@
           single_branch: yes
           version: master 
           depth: 1
-     - name: Install Packer plugins
-       shell: nvim --headless +PackerInstall +qa
+    - name: Install Packer plugins
+      shell: nvim --headless +PackerInstall +qa
 
 
 
