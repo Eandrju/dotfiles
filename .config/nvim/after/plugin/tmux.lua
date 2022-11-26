@@ -1,0 +1,2 @@
+-- vim.keymap.set("n", "p", "<cmd>lua require('tmux').sync_registers('p')<CR>==")
+-- vim.keymap.set("n", "p", [[v:lua.tmux.sync_registers('p')]])
