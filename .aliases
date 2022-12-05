@@ -8,6 +8,8 @@ alias ls='fallback_alias "exa --color=auto" "\ls"'
 alias ll='fallback_alias "exa -lah" "\ls -l"'
 alias la='fallback_alias "exa -a" "\ls -a"'
 
+alias grep='grep --color'
+
 # editor 
 alias vim='fallback_alias "nvim" "vim"'
 alias v=vim

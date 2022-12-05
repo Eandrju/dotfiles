@@ -3,7 +3,6 @@ OS="$(uname -s)"
 # source exports, aliases
 source ~/.aliases
 source ~/.exports
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -22,7 +21,7 @@ autoload -Uz _zinit
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
 
 # NVM
-export NVM_LAZY_LOAD=true
+#export NVM_LAZY_LOAD=true
 #export NVM_COMPLETION=true
 #export NVM_SYMLINK_CURRENT="true"
 zinit wait='0a' lucid light-mode for lukechilds/zsh-nvm
@@ -70,7 +69,3 @@ setopt share_history          # share command history data
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
 SAVEHIST=10000000
-
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
