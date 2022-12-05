@@ -35,8 +35,9 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
    -- use 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
-   --  Local
-    use '/Users/alfierra/projects/serotonin.nvim'
+    --  Local
+    -- use 'eandrju/cellular-automaton.nvim'
+    use '/Users/alfierra/projects/cellular-automaton.nvim'
 
     --  autocomplete
     use 'hrsh7th/nvim-cmp'
@@ -57,12 +58,17 @@ return require('packer').startup(function(use)
 
     -- Lua
     use "folke/neodev.nvim" -- Neovim setup for init.lua and plugin development
+    use({"ckipp01/stylua-nvim", run = "cargo install stylua"})
+
 
     -- Tmux 
     use {
         "aserowy/tmux.nvim",
         config = function() require("tmux").setup() end
     }
+
+    -- Misc
+    use "ThePrimeagen/vim-be-good"
 
 
 end)
