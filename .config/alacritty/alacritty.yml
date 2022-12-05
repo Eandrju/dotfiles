@@ -60,6 +60,22 @@ font:
     x: 0
     y: 1
 
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: JetBrainsMono Nerd Font Mono
+    style: Italic
+
+  bold_italic:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold Italic
+
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
