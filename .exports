@@ -1,5 +1,11 @@
 #!/bin/zsh
 
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/Library/Python/3.8/bin
 export EDITOR=nvim
+
+# locale perl issues:
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 
