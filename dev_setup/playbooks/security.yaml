@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  tasks:
+    - name: Install MacOs Brew Packages
+      when: ansible_distribution == 'MacOSX'
+      community.general.homebrew:
+        update_homebrew: yes
+        upgrade_all: yes
+        pkg:
+         - nmap
+         - nikto
+
+    # - name: Install MacOs Cask Packages
+    #   when: ansible_distribution == 'MacOSX'
+    #   homebrew_cask:
+    #     update_homebrew: yes
+    #     name:
+    #       - rectangle
+    #       - karabiner-elements
+    #       - openvpn-connect
+

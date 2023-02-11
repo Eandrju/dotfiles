@@ -43,7 +43,7 @@
           dest: "{{ home }}/vendor/neovim"
           update: yes
           single_branch: yes
-          version: release-0.8
+          version: nightly 
           depth: 1
 
     - name: Build Neovim

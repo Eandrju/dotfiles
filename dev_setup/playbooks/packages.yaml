@@ -28,10 +28,14 @@
          - bat
          - tmux
          - cask
-         - go
-         - golangci-lint
+         - colordiff
          - tree
          - jq
+         # Go 
+         - go
+         - golangci-lint
+         # Lua
+         - luarocks
 
     - name: Install MacOs Cask Packages
       when: ansible_distribution == 'MacOSX'
@@ -40,4 +44,6 @@
         name:
           - rectangle
           - karabiner-elements
+          - openvpn-connect
+          - wez/wezterm/wezterm
 
