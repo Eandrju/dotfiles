@@ -6,7 +6,7 @@ vim.opt.expandtab = true
 
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.signcolumn = "yes" 
+vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
 
 vim.opt.wrap=false
