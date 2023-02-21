@@ -8,6 +8,8 @@ alias ls='fallback_alias "exa --color=auto" "\ls"'
 alias ll='fallback_alias "exa -lah" "\ls -l"'
 alias la='fallback_alias "exa -a" "\ls -a"'
 
+alias recent='exa --color=always --long --all --reverse --header --sort accessed --accessed | head -n 20'
+
 alias grep='grep --color'
 
 # editor 
