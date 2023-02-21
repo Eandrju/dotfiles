@@ -7,6 +7,9 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 return {
+  ----------    GENERAL    ----------
+  audible_bell = "Disabled",
+
   ---------- WINDOW LAYOUT ----------  
   window_background_opacity = 0.85,
   window_decorations = "RESIZE",
@@ -16,10 +19,10 @@ return {
     bottom = 0,
   },
 
-  ----------    FONTS   -----------
+  ----------     FONTS    -----------
   font_size = 12.5,
 
-  ---------- COLORSCHEME ----------  
+  ----------  COLORSCHEME  ----------  
   force_reverse_video_cursor = true,
   colors = {
     foreground = '#ebdbb2',
