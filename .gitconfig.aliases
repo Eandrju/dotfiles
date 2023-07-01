@@ -1,6 +1,8 @@
 [alias]
     st = status --short 
+    rsst = restore --staged
     c = commit
+    a = add
     br = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --color=always | tail
     co = checkout
     cob = checkout -b

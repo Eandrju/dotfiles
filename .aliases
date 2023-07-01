@@ -39,3 +39,4 @@ alias velocidrone="bash /home/alfierra/projects/activeWindow/setup.sh"
 
 # activate local virtual environment
 alias venv="source venv/bin/activate"
+
