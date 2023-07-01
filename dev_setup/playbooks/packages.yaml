@@ -17,6 +17,13 @@
          - xclip
          - tree
 
+    - name: Tap MacOs Brew Repos 
+      when: ansible_distribution == 'MacOSX'
+      community.general.homebrew_tap:
+        name:
+         - homebrew/cask-drivers # for qmk-toolbox
+
+
     - name: Install MacOs Brew Packages
       when: ansible_distribution == 'MacOSX'
       community.general.homebrew:
@@ -46,4 +53,5 @@
           - karabiner-elements
           - openvpn-connect
           - wez/wezterm/wezterm
+          - qmk-toolbox # for dactyl programing
 
