@@ -56,7 +56,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 # fi
 
 # PROMPT THEME
-source ~/.prompt-theme.sh
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.config/prompt/p10k.zsh
+
 # HISTORY
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
@@ -69,3 +72,4 @@ setopt share_history          # share command history data
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
 SAVEHIST=10000000
+
