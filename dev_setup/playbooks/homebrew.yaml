@@ -13,7 +13,8 @@
 
       rescue:
         - name: Install Homebrew 
-          shell: NONINTERACTIVE=1 /bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)'
+          become: true
+          shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     
     - name: Check if Homebrew in PATH 
       shell: brew --version 
