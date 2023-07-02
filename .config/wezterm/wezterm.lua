@@ -20,7 +20,7 @@ return {
   },
 
   ----------     FONTS    -----------
-  font_size = 12.5,
+  font_size = 13.5,
 
   ----------  COLORSCHEME  ----------  
   force_reverse_video_cursor = true,
