@@ -1,12 +1,25 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 
+local function getHostname()
+    local f = io.popen ("/bin/hostname")
+    if f == nil then
+        return ""
+    end
+    local hostname = f:read("*a") or ""
+    f:close()
+    hostname =string.gsub(hostname, "\n$", "")
+    return hostname
+end
+
+local hostname = getHostname()
+
 wezterm.on('gui-startup', function(cmd)
   local _, _, window = mux.spawn_window(cmd or {})
   window:gui_window():toggle_fullscreen()
 end)
 
-return {
+local CONFIG = {
   ----------    GENERAL    ----------
   audible_bell = "Disabled",
 
@@ -50,3 +63,10 @@ return {
     },
   }
 }
+
+-- machine specific overrides
+if hostname == "Alfierra Mac" then
+    CONFIG.font_size = 12
+end
+
+return CONFIG
