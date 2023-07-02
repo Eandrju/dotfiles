@@ -1,5 +1,11 @@
 OS="$(uname -s)"
 
+#### Enable Powerlevel10k instant prompt ####
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+#### End of Powerlevel10k instant prompt ####
+
 # source exports, aliases
 source ~/.aliases
 source ~/.exports
@@ -22,7 +28,7 @@ autoload -Uz _zinit
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
 
 # NVM
-#export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=true
 #export NVM_COMPLETION=true
 #export NVM_SYMLINK_CURRENT="true"
 zinit wait='0a' lucid light-mode for lukechilds/zsh-nvm
