@@ -11,7 +11,7 @@ return {
   audible_bell = "Disabled",
 
   ---------- WINDOW LAYOUT ----------  
-  window_background_opacity = 0.85,
+  window_background_opacity = 0.75,
   window_decorations = "RESIZE",
   hide_tab_bar_if_only_one_tab = true,
   window_padding = {
@@ -20,7 +20,7 @@ return {
   },
 
   ----------     FONTS    -----------
-  font_size = 13.5,
+  font_size = 14,
 
   ----------  COLORSCHEME  ----------  
   force_reverse_video_cursor = true,
