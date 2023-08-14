@@ -36,11 +36,11 @@ zinit wait='0a' lucid light-mode for lukechilds/zsh-nvm
 # AUTOSUGGENSTIONS
 zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
-bindkey '^[[Z' autosuggest-accept
+bindkey '^[[Z' autosuggest-accept # Shift + Tab
 
 # COMPLETIONS
-zinit ice wait="0c" lucid
-zinit light zsh-users/zsh-completions
+# zinit ice wait="0c" lucid
+# zinit light zsh-users/zsh-completions
 zinit ice wait="0c" lucid
 zinit light greymd/docker-zsh-completion
 fpath=(~/.config/completions $fpath)
