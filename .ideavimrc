@@ -1,0 +1,18 @@
+set relativenumber
+set number
+set commentary
+set visualbell
+set noerrorbells
+set surround
+
+" set <leader> to <space>
+let mapleader = " "
+
+" IDEA specific
+nnoremap <leader>ek :action GotoPreviousError<CR>
+nnoremap <leader>ej :action GotoNextError<CR>
+
+nnoremap <leader>si :source ~/.ideavimrc<CR>
+
+" Find opened file in treeview
+nnoremap <leader>t  :action SelectInProjectView<CR>
