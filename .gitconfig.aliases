@@ -3,7 +3,7 @@
     rsst = restore --staged
     c = commit
     a = add
-    br = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --color=always | tail
+    br = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(align:40)%(color:yellow)%(refname:short)%(color:reset)%(end) %(align:18)%(color:green)%(committerdate:relative)%(color:reset)%(end) %(contents:subject)' --color=always | tail
     co = checkout
     cob = checkout -b
     p = pull 
@@ -12,3 +12,4 @@
     ss = show --stat
     plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
     poh = push origin HEAD
+    sl = stash list --pretty='format:%>(11)%C(yellow)%gd %>(14)%C(green)%cr%C(reset) %gs'
