@@ -28,10 +28,10 @@ autoload -Uz _zinit
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
 
 # NVM
-export NVM_LAZY_LOAD=true
+# export NVM_LAZY_LOAD=true
 #export NVM_COMPLETION=true
 #export NVM_SYMLINK_CURRENT="true"
-zinit wait='0a' lucid light-mode for lukechilds/zsh-nvm
+# zinit wait='0a' lucid light-mode for lukechilds/zsh-nvm
 
 # AUTOSUGGENSTIONS
 zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
@@ -39,11 +39,9 @@ zinit light zsh-users/zsh-autosuggestions
 bindkey '^[[Z' autosuggest-accept # Shift + Tab
 
 # COMPLETIONS
-# zinit ice wait="0c" lucid
-# zinit light zsh-users/zsh-completions
-zinit ice wait="0c" lucid
-zinit light greymd/docker-zsh-completion
 fpath=(~/.config/completions $fpath)
+zstyle ':completion:*:*:git:*' script ~/.config/completions/git-completion.bash
+autoload -Uz compinit && compinit
 
 # SYNTAX HIGHLIGHTING
 zinit ice wait="!0c" lucid
@@ -81,3 +79,7 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
 SAVEHIST=10000000
 
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
